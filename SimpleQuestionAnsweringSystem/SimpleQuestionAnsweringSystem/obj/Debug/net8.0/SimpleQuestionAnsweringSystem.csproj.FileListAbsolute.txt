@@ -1,0 +1,14 @@
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\bin\Debug\net8.0\SimpleQuestionAnsweringSystem.exe
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\bin\Debug\net8.0\SimpleQuestionAnsweringSystem.deps.json
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\bin\Debug\net8.0\SimpleQuestionAnsweringSystem.runtimeconfig.json
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\bin\Debug\net8.0\SimpleQuestionAnsweringSystem.dll
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\bin\Debug\net8.0\SimpleQuestionAnsweringSystem.pdb
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\SimpleQuestionAnsweringSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\SimpleQuestionAnsweringSystem.AssemblyInfoInputs.cache
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\SimpleQuestionAnsweringSystem.AssemblyInfo.cs
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\SimpleQuestionAnsweringSystem.csproj.CoreCompileInputs.cache
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\SimpleQuestionAnsweringSystem.dll
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\refint\SimpleQuestionAnsweringSystem.dll
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\SimpleQuestionAnsweringSystem.pdb
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\SimpleQuestionAnsweringSystem.genruntimeconfig.cache
+C:\Users\MCB\source\repos\SimpleQuestionAnsweringSystem\SimpleQuestionAnsweringSystem\obj\Debug\net8.0\ref\SimpleQuestionAnsweringSystem.dll
