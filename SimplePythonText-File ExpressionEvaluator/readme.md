@@ -1,51 +1,51 @@
 # Simple Python Text-File Expression Evaluator
 
-## Projeye Genel Bakış
+## Project Overview
 
-Bu proje, `input.txt` adlı bir metin dosyasındaki matematiksel ve mantıksal ifadeleri satır satır okuyan, bu ifadeleri değerlendiren ve sonuçları `output.txt` dosyasına yazan basit bir Python betiğidir.
+This project is a simple Python script that reads mathematical and logical expressions line by line from a text file named `input.txt`, evaluates them, and writes the results to an `output.txt` file.
 
-Projenin en önemli kısıtlaması, `eval()` gibi hazır değerlendirme fonksiyonları veya herhangi bir harici Python kütüphanesi kullanılmamasıdır. Tüm ayrıştırma (parsing), tokenizasyon ve işlem önceliği (operator precedence) mantığı sıfırdan kodlanmıştır.
+The most significant constraint of this project is that no built-in evaluation functions like `eval()` or any external Python libraries were used. All parsing, tokenization, and operator precedence logic was coded from scratch.
 
-## Desteklenen Özellikler
+## Features
 
-* **Temel Aritmetik İşlemler:** Toplama (`+`), Çıkarma (`-`), Çarpma (`*`), Bölme (`/`).
-* **İleri Aritmetik İşlemler:** Üs alma (`**`), Tam bölme (`//`) ve Modülüs (`%`).
-* **Mantıksal Karşılaştırmalar:** `<`, `>`, `<=`, `>=`, `==` ve `!=`.
-* **İşlem Önceliği:** Python'un standart işlem önceliği kurallarına uyar (örn. `**` işlemi `*` işleminden, `*`/`/` işlemleri `+`/`-` işlemlerinden önce yapılır).
-* **Karmaşık İfadeler:** Hem aritmetik hem de mantıksal operatörleri içeren `5 * 3 + 10 > 4 / 2` gibi karmaşık satırları çözebilir.
-* **Esnek Sözdizimi:** `5+3` (boşluksuz) ve `5 + 3` (boşluklu) gibi farklı formatlardaki ifadeleri işleyebilir.
-* **Hata Yönetimi:** `5 + z` (geçersiz karakter) veya `1+` (eksik eleman) gibi geçersiz sözdizimine sahip satırlar için çıktı dosyasına "ERROR" yazar.
-* **Boş Satır İşleme:** `input.txt` dosyasındaki boş satırlar, okunabilirliği korumak için `output.txt` dosyasına da boş satır olarak yansıtılır.
+* **Basic Arithmetic Operations:** Addition (`+`), Subtraction (`-`), Multiplication (`*`), Division (`/`).
+* **Advanced Arithmetic Operations:** Exponentiation (`**`), Integer Division (`//`), and Modulus (`%`).
+* **Logical Comparisons:** `<`, `>`, `<=`, `>=`, `==`, and `!=`.
+* **Operator Precedence:** Follows standard Python operator precedence rules (e.g., `**` before `*`, `*`/`/` before `+`/`-`).
+* **Complex Expressions:** Can solve complex lines containing both arithmetic and logical operators, such as `5 * 3 + 10 > 4 / 2`.
+* **Flexible Syntax:** Can process expressions with or without spaces, such as `5+3` and `5 + 3`.
+* **Error Handling:** Writes "ERROR" to the output file for invalid syntax, such as `5 + z` (invalid character) or `1+` (missing element).
+* **Empty Line Handling:** Empty lines in `input.txt` are mirrored as empty lines in `output.txt` to preserve readability.
 
-## Kod Mimarisi (Nasıl Çalışır)
+## Code Architecture (How it Works)
 
-Betik, `input.txt` dosyasını satır satır okuyan bir ana döngü (`main` fonksiyonu) üzerine kuruludur. Her satır için:
+The script is built on a main loop (`main` function) that reads `input.txt` line by line. For each line:
 
-1.  **Okuma ve Temizleme:** Satır okunur (`file_read`) ve `delete_space` ile tüm gereksiz boşluklar kaldırılır.
-2.  **Ayrıştırma (Tokenization):** `find_number` fonksiyonu, temizlenmiş dizeyi sayılar (çok basamaklıları bir bütün olarak) ve operatörler içeren bir listeye dönüştürür.
-3.  **Sınıflandırma:** `find_logic_or_arith` fonksiyonu, ifadenin "aritmetik", "mantıksal" veya "karma (logic+arith)" olduğunu belirler.
-4.  **Doğrulama:** `find_error` fonksiyonu, operatörlerin satırın başında veya sonunda olması gibi temel sözdizimi hatalarını kontrol eder.
-5.  **Değerlendirme (Evaluation):**
-    * **Aritmetik:** `operator_precedence` fonksiyonu, işlem önceliğine göre ifadeyi çözümler.
-    * **Mantıksal:** `logic_compare` fonksiyonu çağrılır.
-    * **Karma:** `logic_arith_op` fonksiyonu, ifadeyi mantıksal operatörden böler, her iki tarafı da `operator_precedence` ile çözer ve son olarak `logic_compare` ile karşılaştırır.
-6.  **Yazma:** Elde edilen sonuç (veya "ERROR") `file_append` fonksiyonu ile `output.txt` dosyasına yazılır.
+1.  **Read and Clean:** The line is read (`file_read`) and all unnecessary spaces are removed with `delete_space`.
+2.  **Tokenization:** The `find_number` function converts the cleaned string into a list of tokens (numbers, including multi-digit ones, and operators).
+3.  **Classification:** `find_logic_or_arith` determines if the expression is purely "arithmetic", "logical", or "mixed (logic+arith)".
+4.  **Validation:** `find_error` checks for basic syntax errors, like operators at the beginning or end of the line.
+5.  **Evaluation:**
+    * **Arithmetic:** The `operator_precedence` function is called, which resolves the expression according to precedence rules.
+    * **Logical:** The `logic_compare` function is called.
+    * **Mixed:** `logic_arith_op` splits the expression at the logical operator, resolves each side with `operator_precedence`, and finally compares the two results with `logic_compare`.
+6.  **Write:** The resulting value (or "ERROR") is written to `output.txt` using `file_append`.
 
-## Nasıl Kullanılır
+## How to Use
 
-1.  Proje dosyalarını indirin ve Python betiğinin adını `evaluator.py` olarak ayarlayın.
-2.  Hesaplanmasını istediğiniz ifadeleri `input.txt` dosyasına her satıra bir ifade gelecek şekilde yazın.
-3.  Aşağıdaki komutu kullanarak Python betiğini çalıştırın:
+1.  Download the project files and rename the Python script to `evaluator.py`.
+2.  Write the expressions you want to calculate in the `input.txt` file, one expression per line.
+3.  Run the Python script using the following command:
 
     ```bash
     python evaluator.py
     ```
 
-4.  Sonuçlar, betikle aynı dizinde `output.txt` adlı dosyada oluşturulacaktır.
+4.  The results will be generated in the `output.txt` file in the same directory.
 
-## Örnek
+## Example
 
-### `input.txt` Dosyası
+### `input.txt` File
 
 ```text
 5 + 3 * 2
